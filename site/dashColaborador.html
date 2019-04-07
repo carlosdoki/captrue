@@ -1,0 +1,526 @@
+       <!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CoreUI CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css">
+    <link rel="stylesheet" type="text/css" href="Princiapal.css">
+    <title>BTP Hackathon</title>
+  </head>
+  <body class="app">
+      <nav class="navbar navbar-expand-lg navbar-light ">
+          <img src="img/logoHorizontal.png" alt="Captrue" height="10%" width="10%">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="home.html">Home</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+         <h1>Seja bem-vindo !</h1>
+        <div class="row">
+            <div class="col-input"> 
+                    <input class="form-control" id="name" type="text" placeholder="Digite o nome do Colaborador">
+                    <br/>
+            </div>
+                
+        </div>
+   
+
+
+
+    <main class="main">
+      <div class="row">
+          <div class="col">
+              <div class="container-fluid">
+                  <div id="ui-view"><div>
+                  <div class="animated fadeIn">
+                      <div class="card">
+                        <div class="card-body">
+                         <div class="row">
+                            <div class="col">
+                              <h4 class="card-title mb-0">Performance</h4>
+                               <div class="small text-muted">Colaborador 1</div>
+                          </div>
+                           
+                    
+                            <div class="col">
+                                <div class="btn-group btn-group-toggle float-right mr-3" data-toggle="buttons">
+                                    <label class="btn btn-outline-secondary">
+                                      <input id="option1" type="radio" name="options" autocomplete="off"> Day
+                                    </label>
+                                    <label class="btn btn-outline-secondary ">
+                                      <input id="option2" type="radio" name="options" autocomplete="off" checked=""> Month
+                                  </label>
+                                    <label class="btn btn-outline-secondary active">
+                                      <input id="option3" type="radio" name="options" autocomplete="off"> Year
+                                    </label>
+                              </div>
+                            </div>
+                  
+          
+                  </div>
+                  <!--Grafico de Performance Geral-->
+                  <div class="chart-wrapper" style="height:300px;margin-top:40px;">
+                    <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                    <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                      <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0">
+                      </div>
+                    </div>
+                    <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                      <div style="position:absolute;width:100%;height:100%;left:0; top:0">
+                      </div>
+                    </div>
+                  </div>
+                  <canvas id="canvas-performance" class="chart chartjs-render-monitor" id="main-chart" height="165" width="823" style="display: block;"></canvas>
+                  </canvas>
+                  <div id="main-chart-tooltip" class="chartjs-tooltip center" style="opacity: 0; left: 634.016px; top: 303.84px;">
+                    <div class="tooltip-header">
+                      <div class="tooltip-header-item">S</div>
+                    </div><div class="tooltip-body">
+                      <div class="tooltip-body-item">
+                      <span class="tooltip-body-item-color" style="background-color: rgb(255, 255, 255);">
+                      </span><span class="tooltip-body-item-label">My First dataset</span>
+                      <span class="tooltip-body-item-value">114</span>
+                    </div>
+                    <div class="tooltip-body-item">
+                      <span class="tooltip-body-item-color" style="background-color: rgb(255, 255, 255);">
+                      </span><span class="tooltip-body-item-label">My Second dataset</span>
+                      <span class="tooltip-body-item-value">94</span>
+                    </div><div class="tooltip-body-item">
+                      <span class="tooltip-body-item-color" style="background-color: rgb(255, 255, 255);">
+                      </span><span class="tooltip-body-item-label">My Third dataset</span>
+                      <span class="tooltip-body-item-value">65</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                  </div>
+                  <div class="card-footer">
+                  <div class="row text-center">
+                  <div class="col-sm-12 col-md mb-sm-2 mb-0">
+                  <div class="text-muted">Atende</div>
+                  <strong>29.703  (40%)</strong>
+                  <div class="progress progress-xs mt-2">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  </div>
+                  <div class="col-sm-12 col-md mb-sm-2 mb-0">
+                  <div class="text-muted">Atende Parcialmente</div>
+                  <strong>24.093 (20%)</strong>
+                  <div class="progress progress-xs mt-2">
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  </div>
+                  <div class="col-sm-12 col-md mb-sm-2 mb-0">
+                  <div class="text-muted">Excede Espectativas</div>
+                  <strong>78.706 (60%)</strong>
+                  <div class="progress progress-xs mt-2">
+                  <div class="progress-bar bg-warning" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  </div>
+                  <div class="col-sm-12 col-md mb-sm-2 mb-0">
+                  <div class="text-muted">Não Atende</div>
+                  <strong>22.123 (80%)</strong>
+                  <div class="progress progress-xs mt-2">
+                  <div class="progress-bar bg-danger" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  </div>
+                  
+                  </div>
+                  </div>
+                  </div>
+          
+          
+    
+          </div> 
+          
+
+<div class="row">
+
+          <div class="col-em">
+              <div class="card text-white bg-primary">
+              <div class="card-body pb-0">
+              <div class="text-value">9.823</div>
+              <div>Status Feliz</div>
+              </div>
+              <div class="chart-wrapper mt-3 mx-3" style="height:50%;width: 25%;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+              <canvas class="chart chartjs-render-monitor" id="card-chart1" height="70" width="381" style="display: block; width: 381px; height: 70px;"></canvas>
+              </div>
+              </div>
+          </div>
+          <div class="col-em">
+              <div class="card text-white bg-primary">
+              <div class="card-body pb-0">
+              <div class="text-value">9.823</div>
+              <div>Status Ansioso</div>
+              </div>
+              <div class="chart-wrapper mt-3 mx-3" style="height:70px;width: 25%;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+              <canvas class="chart chartjs-render-monitor" id="card-chart1" height="70" width="381" style="display: block; width: 381px; height: 70px;"></canvas>
+              </div>
+              </div>
+          </div>
+          <div class="col-em">
+                  <div class="card text-white bg-primary">
+                  <div class="card-body pb-0">
+                  <div class="text-value">9.823</div>
+                  <div>Status Cansado </div>
+                  </div>
+                  <div class="chart-wrapper mt-3 mx-3" style="height:70px;width: 25%;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+                  <canvas class="chart chartjs-render-monitor" id="card-chart1" height="70" width="381" style="display: block; width: 381px; height: 70px;"></canvas>
+                  </div>
+                  </div>
+          </div>
+          <div class="col-em">
+                      <div class="card text-white bg-primary">
+                      <div class="card-body pb-0">
+                      <div class="text-value">9.823</div>
+                      <div>Status Triste</div>
+                      </div>
+                      <div class="chart-wrapper mt-3 mx-3" style="height:70px;width: 25%;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+                      <canvas class="chart chartjs-render-monitor" id="card-chart1" height="70" width="381" style="display: block; width: 381px; height: 70px;"></canvas>
+                      </div>
+                      </div>
+          </div>
+          <div class="col-em">
+                <div class="card text-white bg-danger">
+                <div class="card-body pb-0">
+                <div class="text-value">9.823</div>
+                <div>Status Embriadez</div>
+                </div>
+                <div class="chart-wrapper mt-3 mx-3" style="height:70px;width: 25%;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+                <canvas class="chart chartjs-render-monitor" id="card-chart2" height="70" width="381" style="display: block; width: 381px; height: 70px;"></canvas>
+                </div>
+                </div>
+    </div>
+   </div>
+<div class="row">
+    <div class="col">
+        <div class="container-fluid-1">
+            <div id="ui-view"><div>
+            <div class="animated fadeIn">
+                <div class="card">
+                   <div class="row">
+                      <div class="col">
+                   <div class="card-header">
+                      <h4 class="card-title mb-0">Desempenho Geral</h4>
+                      <div class="small text-muted">Equipe 3</div>
+                   </div>
+                  
+                  <div class="card-body">
+                      <!--Grafico de Desempenho Geral-->
+                      <div class="chart-wrapper" style="height:557px;margin-top:40px;">
+                          <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                          <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                            <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0">
+                            </div>
+                          </div>
+                          <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                            <div style="position:absolute;width:100%;height:100%;left:0; top:0">
+                            </div>
+                          </div>
+                        </div>
+                        <canvas id="canvas-desempenho" class="chart chartjs-render-monitor" id="main-chart" height="500" width="823" style="display: block;"></canvas>
+                        </canvas>
+                        <div id="main-chart-tooltip" class="chartjs-tooltip center" style="opacity: 0; left: 634.016px; top: 303.84px;">
+                          <div class="tooltip-header">
+                            <div class="tooltip-header-item">S</div>
+                          </div>
+                          <div class="tooltip-body">
+                            <div class="tooltip-body-item">
+                            <span class="tooltip-body-item-color" style="background-color: rgb(255, 255, 255);">
+                            </span><span class="tooltip-body-item-label">My First dataset</span>
+                            <span class="tooltip-body-item-value">114</span>
+                          </div>
+                          <div class="tooltip-body-item">
+                            <span class="tooltip-body-item-color" style="background-color: rgb(255, 255, 255);">
+                            </span><span class="tooltip-body-item-label">My Second dataset</span>
+                            <span class="tooltip-body-item-value">94</span>
+                          </div>
+                      </div>
+                      </div>
+                      </div>
+                      </div>
+                  </div>
+                  </div>
+                </div>
+            </div>
+                      </div>
+                   </div>
+
+    </div>
+   </div>       
+    <div class="col">
+        <div class="container-fluid-1">
+            <div id="ui-view"><div>
+            <div class="animated fadeIn">
+                <div class="card">
+                   <div class="row">
+                      <div class="col">
+                   <div class="card-header">
+        <h4 class="card-title mb-0">Status Geral</h4>
+        <div class="small text-muted">Equipe 3</div>
+                   </div>
+                      </div></div>
+    <div class="card-body">
+      <br>
+      <table class="table table-responsive-sm table-hover table-outline mb-0">
+      <thead class="thead-light">
+      <tr>
+      <th class="text-center">
+      <i class="icon-people"></i>
+      </th>
+      <th>Colaborador</th>
+      <th class="text-center">Status</th>
+      <th>Desempenho</th>
+      <th class="text-center">Check-in</th>
+      <th>Check-out</th>
+      </tr>
+      </thead>
+      <tbody>
+    <tr>
+    <td class="text-center">
+      <div class="avatar">
+        <img class="img-avatar" src="img/operador1.jpeg" alt="admin@bootstrapmaster.com">
+      </div>
+    </td>
+    <td>
+    <div id="name" >Colaborador 1</div>
+    <div class="small text-muted">
+    <span>Equipe 1</span> | <strong>Cargo: </strong> SUPERVISOR DE GATE</div>
+    </td>
+    <td class="text-center">
+      <img class="img-avatar" src="img/up.png" width="30px" height="30px">
+    </td>
+    <td>
+    <div class="clearfix">
+    <div class="float-left">
+    <strong>50%</strong>
+    </div>
+    <div class="float-right">
+    <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+    </div>
+    </div>
+    <div class="progress progress-xs">
+    <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    </td>
+    <td class="text-center">
+      <strong>6 Abril 2019 8:00</strong>
+    </td>
+    <td>
+    <strong>6 Abril 2019 18:00</strong>
+    </td>
+    </tr>
+    <tr>
+
+    <td class="text-center">
+    <div class="avatar">
+    <img class="img-avatar" src="img/operador2.jpeg" alt="admin@bootstrapmaster.com">
+    </div>
+    </td>
+    <td>
+    <div id="name">Colaborador 2</div>
+    <div class="small text-muted">
+      <span>Equipe 1</span> | <strong>Cargo: </strong>OPERADOR DE BORDO - ESTIVADOR</div>
+    </td>
+    <td class="text-center">
+        <img class="img-avatar" src="img/down.png" width="30px" height="30px">
+     </td>
+    <td>
+    <div class="clearfix">
+    <div class="float-left">
+    <strong>10%</strong>
+    </div>
+    <div class="float-right">
+    <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+    </div>
+    </div>
+    <div class="progress progress-xs">
+    <div class="progress-bar bg-info" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    </td>
+    <td class="text-center">
+        <strong>6 Abril 2019 8:00</strong>
+      </td>
+      <td>
+      <strong>6 Abril 2019 18:00</strong>
+      </td>
+    </tr>
+    <tr>
+    <td class="text-center">
+    <div class="avatar">
+    <img class="img-avatar" src="img/operador3.jpeg" alt="admin@bootstrapmaster.com">
+    </div>
+    </td>
+    <td>
+    <div id="name" >Colaborador 3</div>
+    <div class="small text-muted">
+    <span>Equipe 4</span> | <strong>Cargo: </strong>OPERADOR DE EQUIPAMENTOS I</div>
+    </td>
+    <td class="text-center">
+        <img class="img-avatar" src="img/up.png" width="30px" height="30px">
+    </td>
+    <td>
+    <div class="clearfix">
+    <div class="float-left">
+    <strong>74%</strong>
+    </div>
+    <div class="float-right">
+    <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+    </div>
+    </div>
+    <div class="progress progress-xs">
+    <div class="progress-bar bg-warning" role="progressbar" style="width: 74%" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    </td>
+    <td class="text-center">
+        <strong>6 Abril 2019 8:00</strong>
+      </td>
+      <td>
+      <strong>6 Abril 2019 18:00</strong>
+      </td>
+    </tr>
+    <tr>
+    <td class="text-center">
+    <div class="avatar">
+    <img class="img-avatar" src="img/operador4.jpeg" alt="admin@bootstrapmaster.com">
+    </div>
+    </td>
+    <td>
+    <div>Colaborador 4</div>
+    <div class="small text-muted">
+        <span>Equipe 4</span> | <strong>Cargo: </strong>OPERADOR DE COSTADO - CAPATAZIA</div>
+    </td>
+    <td class="text-center">
+        <img class="img-avatar" src="img/up.png" width="30px" height="30px">
+    </td>
+    <td>
+    <div class="clearfix">
+    <div class="float-left">
+    <strong>98%</strong>
+    </div>
+    <div class="float-right">
+    <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+    </div>
+    </div>
+    <div class="progress progress-xs">
+    <div class="progress-bar bg-success" role="progressbar" style="width: 98%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    </td>
+    <td class="text-center">
+        <strong>6 Abril 2019 8:00</strong>
+      </td>
+      <td>
+      <strong>6 Abril 2019 18:00</strong>
+      </td>
+    </tr>
+    <tr>
+    <td class="text-center">
+    <div class="avatar">
+    <img class="img-avatar" src="img/operador5.jpeg" alt="admin@bootstrapmaster.com">
+    </div>
+    </td>
+    <td>
+    <div>Colaborador 5</div>
+    <div class="small text-muted">
+        <span>Equipe 5</span> | <strong>Cargo: </strong>CONFERENTE PL</div>
+    </td>
+    <td class="text-center">
+        <img class="img-avatar" src="img/up.png" width="30px" height="30px">
+    </td>
+    <td>
+    <div class="clearfix">
+    <div class="float-left">
+    <strong>22%</strong>
+    </div>
+    <div class="float-right">
+    <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+    </div>
+    </div>
+    <div class="progress progress-xs">
+    <div class="progress-bar bg-info" role="progressbar" style="width: 22%" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <td class="text-center">
+        <strong>6 Abril 2019 8:00</strong>
+      </td>
+      <td>
+      <strong>6 Abril 2019 18:00</strong>
+      </td>
+    </tr>
+    <tr>
+    <td class="text-center">
+    <div class="avatar">
+    <img class="img-avatar" src="img/operador6.jpeg" alt="admin@bootstrapmaster.com">
+    </div>
+    </td>
+    <td>
+    <div>Colaborador 6</div>
+    <div class="small text-muted">
+        <span>Equipe 5</span> | <strong>Cargo: </strong>CONFERENTE PL</div>
+    </td>
+    <td class="text-center">
+        <img class="img-avatar" src="img/down.png" width="30px" height="30px">
+    </td>
+    <td>
+    <div class="clearfix">
+    <div class="float-left">
+    <strong>43%</strong>
+    </div>
+    <div class="float-right">
+    <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+    </div>
+    </div>
+    <div class="progress progress-xs">
+    <div class="progress-bar bg-success" role="progressbar" style="width: 43%" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    </td>
+    <td class="text-center">
+        <strong>6 Abril 2019 8:00</strong>
+      </td>
+      <td>
+      <strong>6 Abril 2019 18:00</strong>
+      </td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+    
+  </div>
+
+</div>
+        
+     
+      
+        
+        </div></div></div>
+        </div>
+        </main>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, Bootstrap, then CoreUI  -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@coreui/coreui/dist/js/coreui.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script type="text/javascript" src="js/charts.js" class="view-script"></script>
+    
+
+    <script>
+      // Initialize Firebase
+     
+    </script>
+  </body>
+</html>
