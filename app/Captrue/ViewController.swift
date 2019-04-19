@@ -11,6 +11,7 @@ import AVFoundation
 import Firebase
 import FirebaseFirestore
 import CoreImage
+import Alamofire
 
 class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     
@@ -30,7 +31,28 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     let number3 = Int.random(in: 0 ... 3)
     let colaborador : [String] = ["mDWfG5jWqHpzUzK52Gc6", "9gUVxwKm8r1NpuJYw3bF", "fiuexer8rJi4KA47DWQf", "0L9UghXcQib4ZdpEgwZa"]
     
-    
+//    {
+//        "custom_classes" = 5;
+//        images =     [
+//            {
+//                classifiers =             [
+//                    {
+//                        classes =                     [
+//                            {
+//                                class = Triste;
+//                                score = "0.893";
+//                            }
+//                        ];
+//                        "classifier_id" = "BTP_951803699";
+//                        name = BTP;
+//                    }
+//                ];
+//                "resolved_url" = "https://firebasestorage.googleapis.com/v0/b/captrue-fe9e2.appspot.com/o/158C3DCC-22B1-45CC-B944-567F3372DB99.jpg?alt=media";
+//                "source_url" = "https://firebasestorage.googleapis.com/v0/b/captrue-fe9e2.appspot.com/o/158C3DCC-22B1-45CC-B944-567F3372DB99.jpg?alt=media";
+//            }
+//        ];
+//        "images_processed" = 1;
+//    }
     struct Classes2: Decodable {
         let classes: String
         let score: Decimal
@@ -43,8 +65,8 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     
     struct Watson: Decodable {
         let images: [Images]
-        let images_processed: String
-        let custom_classes: String
+        let images_processed: Int
+        let custom_classes: Int
     }
     
     struct Images: Decodable {
@@ -122,9 +144,25 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
         stillImageOutput.capturePhoto(with: settings, delegate: self)
         
-        activeAIV.stopAnimating()
-        activeView.isHidden = true
-
+        
+//         let downloadUrl = "https://firebasestorage.googleapis.com/v0/b/captrue-fe9e2.appspot.com/o/0972B72D-EE1F-4B8B-B332-663FB1C9DBDC.jpg?alt=media&token=240e854d-5457-4fba-a3cf-f82b8fc077ae"
+//        let session = URLSession.shared
+//        let imageURL = URL(string: "https://gateway.watsonplatform.net/visual-recognition/api/v3/classify?url=\(downloadUrl)&version=2018-03-19&classifier_ids=BTP_951803699")
+//
+//        var request = URLRequest(url: imageURL!)
+//        request.httpMethod = "GET"
+//        request.setValue("Basic YXBpa2V5OmlqaXFWLTNhSFgzdXVpaTZ0RHA2YXYtNE9pRnRycXJNWlplbkhXVmp4bWVR", forHTTPHeaderField: "Authorization")
+//
+//        let task = session.dataTask(with: request) { data, response, error in
+//
+//            if error == nil {
+//                let responseData = String(data: data!, encoding: String.Encoding.utf8)
+//                let user = try! JSONDecoder().decode(Watson.self, from: data!)
+//                print(user.images[0].classifiers[0].classes[0].classes)
+//                print(user.images[0].classifiers[0].classes[0].score)
+//            }
+//        }
+//        task.resume()
     }
     
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
@@ -170,12 +208,10 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
                         let task = session.dataTask(with: request) { data, response, error in
                             
                             if error == nil {
-                                
-                                //                                    guard let watson = try? JSONDecoder().decode(Watson.self, from: data!) else {
-                                //                                        print("Error: Couldn't decode data into Blog")
-                                //                                        self.captureSession.stopRunning()
-                                //                                        return
-                                //                                    }
+                                let user = try! JSONDecoder().decode(Watson.self, from: data!)
+                                let sentimento = user.images[0].classifiers[0].classes[0].classes
+                                let score = user.images[0].classifiers[0].classes[0].score
+                            
                                 let dateFormatter = DateFormatter()
                                 dateFormatter.calendar = Calendar(identifier: .iso8601)
                                 dateFormatter.dateFormat = "dd/MM/yyyy"
@@ -190,7 +226,8 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
                                     "data": "\(strData)",
                                     "hora": "\(strHora)",
                                     "foto": "\(url!)",
-                                    "sentimento" : "\(self.sentimento[self.number])",
+                                    "sentimento" : "\(sentimento)",
+                                    "score" : score,
                                     "tipo" : "\(self.tipo[self.number2])"
                                 ]) { err in
                                     if let err = err {
@@ -201,9 +238,12 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
                                 }
                                 //
                                 self.captureSession.stopRunning()
-                                
+
                                 self.performSegue(withIdentifier: "tarefas", sender: nil)
+
                             }
+                            self.activeAIV.stopAnimating()
+                            self.activeView.isHidden = true
                         }
                         task.resume()
                     }
