@@ -15,12 +15,11 @@ class TarefasVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var tarefasTbl: UITableView!
     @IBOutlet var notificacaoVC: UIView!
     
-    var tarefas = ["Tarefa 1", "Tarefa 2", "Tarefa 3", "Tarefa 4", "Tarefa 5"]
+    var tarefas = ["Tarefa 1 - Carregar navio", "Tarefa 2 - Manutenção dos equipamento", "Tarefa 3 - Treinamento Obrigatorio", "Tarefa 4 - Assistencia Social", "Tarefa 5 - Treinamento preventivo"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        notificacaoVC.isHidden = false
         tarefasTbl.delegate = self
         tarefasTbl.dataSource = self
         notificacaoVC.isHidden = true
@@ -29,6 +28,7 @@ class TarefasVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        notificacaoVC.isHidden = true
         self.tarefasTbl.reloadData()
     }
     
